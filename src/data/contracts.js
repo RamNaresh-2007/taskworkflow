@@ -1,0 +1,26 @@
+export const VIEWS = {
+  LIST: 'LIST',
+  CREATE: 'CREATE',
+  WORKFLOW: 'WORKFLOW',
+  USERS: 'USERS',
+};
+
+export const STATUSES = {
+  BACKLOG: 'BACKLOG',
+  IN_PROGRESS: 'IN_PROGRESS',
+  REVIEW: 'REVIEW',
+  DONE: 'DONE',
+};
+
+export const STATUS_ORDER = [
+  STATUSES.BACKLOG,
+  STATUSES.IN_PROGRESS,
+  STATUSES.REVIEW,
+  STATUSES.DONE,
+];
+
+export const PRIORITIES = {
+  LOW: 'LOW',
+  MEDIUM: 'MEDIUM',
+  HIGH: 'HIGH',
+};

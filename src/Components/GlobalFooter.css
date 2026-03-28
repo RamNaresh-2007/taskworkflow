@@ -1,0 +1,84 @@
+/* src/Components/GlobalFooter.css */
+.global-footer {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border-glass, rgba(255, 255, 255, 0.1));
+    position: relative;
+    overflow: hidden;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 48px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.footer-left .copyright {
+    margin: 0;
+    color: var(--text-muted, #a1a1aa);
+    font-size: 0.8rem;
+}
+
+.footer-left .version {
+    margin: 4px 0 0;
+    color: var(--text-faint, #52525b);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-link {
+    color: var(--text-muted, #a1a1aa);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all var(--transition-fast, 0.15s ease);
+    position: relative;
+}
+
+.footer-link:hover {
+    color: var(--text-primary, #ffffff);
+}
+
+.dot-sep {
+    color: var(--border-strong, rgba(255, 255, 255, 0.15));
+    font-size: 0.8rem;
+}
+
+.footer-glow-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-cyan), var(--accent-blue), transparent);
+    box-shadow: 0 0 10px var(--border-glow);
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 640px) {
+    .footer-content {
+        padding: 16px;
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+}

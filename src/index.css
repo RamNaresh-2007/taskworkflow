@@ -1,10 +1,230 @@
-body {
-  margin: 0;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  background-color: #eaeaea;
+/* =========================================
+   NEXUSTASK WORKFLOW - PREMIUM PRO THEME (ROOT)
+   ========================================= */
+
+:root {
+  /* Core Colors */
+  --bg-base: #f8fafc;
+  --bg-app: #ffffff;
+  --bg-elevated: rgba(255, 255, 255, 0.95);
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-surface: rgba(241, 245, 249, 0.7);
+  --bg-surface-hover: rgba(226, 232, 240, 0.8);
+
+  /* Typography Colors */
+  --text-main: #1e293b;
+  --text-primary: #0f172a;
+  --text-muted: #475569;
+  --text-soft: #64748b;
+  --text-faint: #94a3b8;
+
+  /* Borders */
+  --border-subtle: rgba(99, 102, 241, 0.08);
+  --border-glass: rgba(99, 102, 241, 0.15);
+  --border-strong: rgba(99, 102, 241, 0.25);
+  --border-glow: rgba(99, 102, 241, 0.35);
+
+  /* Accents - Premium Violet & Indigo */
+  --accent-blue: #3b82f6;
+  --accent-cyan: #06b6d4;
+  --accent-indigo: #6366f1;
+  --accent-violet: #8b5cf6;
+  --accent-green: #10b981;
+  --accent-orange: #f59e0b;
+  --danger: #ef4444;
+
+  /* Geometry & Shadows */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 8px 16px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 16px 32px rgba(15, 23, 42, 0.08), 0 0 0 1px var(--border-glass) inset;
+  --shadow-glow: 0 0 24px var(--border-glow);
+
+  /* Transitions */
+  --transition-fast: 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-normal: 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-slow: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-h1, h2, h3, h4 {
-  color: #333;
+[data-theme="dark"] {
+  --bg-base: #0f172a;
+  --bg-app: #1e293b;
+  --bg-elevated: rgba(30, 41, 59, 0.8);
+  --bg-card: rgba(30, 41, 59, 0.65);
+  --bg-surface: rgba(51, 65, 85, 0.5);
+  --bg-surface-hover: rgba(71, 85, 105, 0.6);
+  --text-main: #f8fafc;
+  --text-primary: #ffffff;
+  --text-muted: #94a3b8;
+  --text-soft: #64748b;
+  --text-faint: #475569;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--border-glass) inset;
+}
+
+[data-theme="ocean"] {
+  --bg-base: #082f49;
+  --bg-app: #0c4a6e;
+  --bg-elevated: rgba(14, 116, 144, 0.6);
+  --bg-card: rgba(7, 89, 133, 0.4);
+  --bg-surface: rgba(14, 116, 144, 0.5);
+  --bg-surface-hover: rgba(8, 145, 178, 0.6);
+  --text-main: #f0f9ff;
+  --text-primary: #ffffff;
+  --text-muted: #bae6fd;
+  --text-soft: #7dd3fc;
+  --text-faint: #38bdf8;
+  --accent-blue: #38bdf8;
+  --accent-cyan: #22d3ee;
+  --accent-indigo: #818cf8;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--border-glass) inset;
+}
+
+[data-theme="sunset"] {
+  --bg-base: #fff7ed;
+  --bg-app: #ffedd5;
+  --bg-elevated: rgba(255, 237, 213, 0.8);
+  --bg-card: rgba(254, 215, 170, 0.5);
+  --bg-surface: rgba(253, 186, 116, 0.6);
+  --bg-surface-hover: rgba(251, 146, 60, 0.7);
+  --text-main: #431407;
+  --text-primary: #7c2d12;
+  --text-muted: #9a3412;
+  --text-soft: #c2410c;
+  --text-faint: #ea580c;
+  --accent-blue: #fb923c;
+  --accent-cyan: #f97316;
+  --accent-indigo: #ea580c;
+  --shadow-sm: 0 2px 4px rgba(67, 20, 7, 0.04);
+  --shadow-md: 0 8px 16px rgba(67, 20, 7, 0.08);
+  --shadow-lg: 0 16px 32px rgba(67, 20, 7, 0.12), 0 0 0 1px var(--border-glass) inset;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-base);
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(99, 102, 241, 0.1), transparent 40%),
+    radial-gradient(circle at 85% 100%, rgba(139, 92, 246, 0.12), transparent 40%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.2);
+  color: #0f172a;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.layout-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.layout-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+}
+
+/* Background Animated Gradient Mesh */
+.layout-root::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.07) 0%, transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(236, 72, 153, 0.05) 0%, transparent 50%);
+  animation: bg-drift 30s ease-in-out infinite alternate;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes bg-drift {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-3%, 4%) scale(1.05);
+  }
+
+  100% {
+    transform: translate(2%, -3%) scale(1);
+  }
+}
+
+.app {
+  flex: 1;
+  padding: 32px 48px;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Scrollbars - Premium Mac Style */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 16px;
+  }
 }
